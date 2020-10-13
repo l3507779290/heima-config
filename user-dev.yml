@@ -1,21 +1,22 @@
+server:
+  port: ${port:9091}
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+  application:
+    #应用名
+    name: user-service
+mybatis:
+  type-aliases-package: com.itheima.user.pojo
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
   instance:
     ip-address: 127.0.0.1
+    prefer-ip-address: true
     lease-expiration-duration-in-seconds: 90
     lease-renewal-interval-in-seconds: 30
-    prefer-ip-address: true
-mybatis:
-  type-aliases-package: com.itheima.user.pojo
-server:
-  port: 9091
-spring:
-  application:
-    name: user-service
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    password: root
-    url: jdbc:mysql://localhost:3306/test
-    username: root
